@@ -8,7 +8,15 @@ function App() {
 
   function incValue() {
     if (counter < 20) {
-      setCounter(counter + 1);
+      setCounter((prevCounter) => {
+        return prevCounter + 1;
+      });
+      setCounter((prevCounter) => {
+        return prevCounter + 1;
+      });
+      setCounter((prevCounter) => {
+        return prevCounter + 1;
+      });
     }
   }
 
