@@ -27,7 +27,7 @@ function App() {
     <div
       className="w-screen h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
       style={{
-        backgroundImage: `url('https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg')`,
+        backgroundImage: `url('https://images.pexels.com/photos/106152/euro-coins-currency-money-106152.jpeg')`,
       }}>
       <div className="w-full">
         <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
@@ -49,9 +49,13 @@ function App() {
             <div className="relative w-full h-0.5">
               <button
                 type="button"
-                className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-white rounded-md bg-green-900 text-white px-2 py-0.5"
-                onClick={swap}>
-                swap
+                onClick={swap}
+                className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-white rounded-md bg-green-900 text-white px-4 py-2 font-mono font-medium overflow-hidden group">
+                <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-600 rounded-full group-hover:w-40 group-hover:h-40 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0"></span>
+
+                <span className="absolute inset-0 w-full h-full -mt-1 rounded-md opacity-30 bg-gradient-to-b from-transparent via-transparent to-black z-0"></span>
+
+                <span className="relative z-10">Swap</span>
               </button>
             </div>
             <div className="w-full mt-1 mb-4">
@@ -66,8 +70,14 @@ function App() {
             </div>
             <button
               type="submit"
-              className="w-full bg-green-900 text-white px-4 py-3 rounded-lg">
-              Convert {from.toUpperCase()} to {to.toUpperCase()}
+              className="relative w-full bg-green-900 text-white px-4 py-3 rounded-lg overflow-hidden font-medium group">
+              <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-600 rounded-full group-hover:w-96 group-hover:h-96 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0"></span>
+
+              <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black z-0"></span>
+
+              <span className="relative z-10">
+                Convert {from.toUpperCase()} to {to.toUpperCase()}
+              </span>
             </button>
           </form>
         </div>
