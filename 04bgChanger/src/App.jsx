@@ -38,7 +38,7 @@ function App() {
             className="outline-none px-4 py-1 rounded-full text-black shadow-lg"
             style={{ backgroundColor: "#bc6c25" }}>
             Rust
-          </button>  
+          </button>
         </div>
       </div>
     </div>
