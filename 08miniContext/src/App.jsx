@@ -6,7 +6,7 @@ import "./App.css";
 function App() {
   return (
     <UserContextProvider>
-      <h1>Himesh Verma</h1>
+      <h2>Login Page using Context API</h2>
       <Login />
       <Profile />
     </UserContextProvider>

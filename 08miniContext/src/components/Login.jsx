@@ -13,7 +13,6 @@ function Login() {
   };
   return (
     <div>
-      <h2>Login</h2>
       <input
         type="text"
         value={username}
