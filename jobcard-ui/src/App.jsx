@@ -6,31 +6,27 @@ import Hero from "./components/Hero.jsx";
 import ViewJobs from "./pages/ViewJobs.jsx";
 import PostJob from "./pages/PostJobs.jsx";
 import ScrollToTop from "./components/ScrollToTop";
+import jobData from "./data/jobs.js";
 
 const Home = () => <Hero />;
 
 function App() {
-  const [isDark, setIsDark] = useState(false);
   const location = useLocation();
+  const [jobs, setJobs] = useState(jobData);
 
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", isDark);
-  }, [isDark]);
-
-  <button
-    onClick={() => setIsDark(!isDark)}
-    className="text-sm px-4 py-2 border rounded mt-2 lg:mt-0">
-    {isDark ? "Light Mode" : "Dark Mode"}
-  </button>;
+  const addJob = (newJob) => {
+    setJobs((prev) => [...prev, { id: Date.now(), ...newJob }]);
+  };
 
   return (
-    <AnimatePresence mode="wait">
-      <Navbar/>
+    <AnimatePresence>
+      <Navbar />
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
-        <Route path="/post-job" element={<PostJob />} />
-        <Route path="/view-jobs" element={<ViewJobs />} />
+        <Route path="/view-jobs" element={<ViewJobs jobs={jobs} />} />
+        <Route path="/post-job" element={<PostJob addJob={addJob} />} />
       </Routes>
+      <ScrollToTop/>
     </AnimatePresence>
   );
 }

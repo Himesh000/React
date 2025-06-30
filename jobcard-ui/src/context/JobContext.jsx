@@ -1,33 +1,18 @@
 import { createContext, useContext, useState } from "react";
+import initialJobs from "../data/jobs";
 
 const JobContext = createContext();
 
 export const JobProvider = ({ children }) => {
-  const [jobs, setJobs] = useState([
-    {
-      title: "Frontend Developer",
-      description: "Build user interfaces",
-      company: "TechCorp",
-      location: "Remote",
-      salary: "₹10 LPA",
-      tags: ["React", "JavaScript"],
-    },
-    {
-      title: "Backend Engineer",
-      description: "Work on server-side logic",
-      company: "DataX",
-      location: "Bangalore",
-      salary: "₹15 LPA",
-      tags: ["Node.js", "MongoDB"],
-    },
-  ]);
+  const [jobList, setJobList] = useState(initialJobs);
 
   const addJob = (job) => {
-    setJobs([job, ...jobs]);
+    const newJob = { ...job, id: Date.now() }; // Add unique ID
+    setJobList([newJob, ...jobList]);
   };
 
   return (
-    <JobContext.Provider value={{ jobs, addJob }}>
+    <JobContext.Provider value={{ jobs: jobList, addJob }}>
       {children}
     </JobContext.Provider>
   );

@@ -1,7 +1,7 @@
-import { useJob } from "../context/JobContext";
+import { useJob } from "../context/JobContext.jsx";
 import { useState } from "react";
-import JobCard from "../components/JobCard";
-import AnimatedPage from "../components/AnimatedPage";
+import JobCard from "../components/JobCard.jsx";
+import AnimatedPage from "../components/AnimatedPage.jsx";
 
 const ViewJobs = () => {
   const { jobs } = useJob();
@@ -56,8 +56,8 @@ const ViewJobs = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {filteredJobs.map((job, index) => (
-            <JobCard key={index} job={job} />
+          {filteredJobs.map((job, idx) => (
+            <JobCard key={job.id || idx} job={job} />
           ))}
         </div>
       </div>
