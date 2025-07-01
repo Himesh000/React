@@ -6,7 +6,7 @@ const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-sky-500 to-indigo-600 flex items-center justify-center px-6">
+    <section className="min-h-screen bg-gradient-to-br from-sky-500 to-green-600 flex items-center justify-center px-6">
       <div className="text-center text-white">
         <motion.h1
           initial={{ y: -50, opacity: 0 }}
@@ -34,13 +34,13 @@ const Hero = () => {
         >
           <button
             onClick={() => navigate("/post-job")}
-            className="bg-white text-sky-600 px-6 py-3 rounded-lg font-semibold shadow hover:scale-105 transition"
+            className="bg-white text-black px-6 py-3 rounded-lg font-semibold shadow hover:scale-105 transition"
           >
             Post a Job
           </button>
           <button
             onClick={() => navigate("/view-jobs")}
-            className="bg-transparent border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-sky-600 transition"
+            className="bg-transparent border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition"
           >
             View Jobs
           </button>

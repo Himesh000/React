@@ -22,7 +22,7 @@ const Navbar = () => {
         isScrolled ? "bg-white shadow-md dark:bg-gray-900" : "bg-transparent"
       }`}>
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-orange-600">JobCard</h1>
+        <h1 className="text-2xl font-bold text-black">JobCard</h1>
         <div className="space-x-6 hidden md:flex">
           <Link to="/" className="hover:text-orange-500 font-medium">
             Home
